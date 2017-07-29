@@ -1,0 +1,56 @@
+body{
+  margin: 0 auto;
+  padding: 0;
+}
+.header{
+  border-bottom: 1px solid black;
+  height: 28px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: right;
+}
+.header a{
+  line-height: 28px;
+  margin: 0 10px;
+}
+h2{
+  margin-top: 48px;
+  margin-left: 10px;
+}
+#add_form_container{
+  margin: 10px;
+}
+#add_form{
+  border: 1px solid black;
+  width: 50%;
+  position: relative;
+}
+.element{
+  margin: 10px;
+}
+.element label{
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+}
+
+.element input{
+  display: inline-block;
+  width: 70%;
+}
+form h4{
+  margin: 0 0 0 10px;
+}
+#element_container{
+  margin-left: 20px;
+}
+.element:last-of-type{
+  margin-bottom: 40px;
+}
+#add_submit{
+  position: absolute;
+  right: 40px;
+  bottom: 10px;
+}

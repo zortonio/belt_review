@@ -1,0 +1,48 @@
+body{
+  margin: 0 auto;
+  padding: 0;
+}
+.header{
+  border-bottom: 1px solid black;
+  height: 28px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: right;
+}
+.header a{
+  line-height: 28px;
+  margin: 0 10px;
+}
+#main_title{
+  margin-top: 48px;
+  margin-left: 10px;
+}
+h4{
+  margin: 10px;
+}
+#review_container, #form_container{
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+#review_title{
+  margin: 10px;
+  border-bottom: 1px solid black;
+}
+.reviews{
+  border-bottom: 1px solid black;
+}
+.review_bottom_container h4, .review_bottom_container a{
+  display: inline-block;
+}
+#review_form_title{
+  margin: 10px 0 0 20px;;
+}
+form textarea{
+  margin: 10px 20px;
+}
+.element, #add_submit{
+  margin: 10px 20px;
+}

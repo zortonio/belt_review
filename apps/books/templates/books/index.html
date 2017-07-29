@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Books Home</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'books/css/main.css' %}">
+  </head>
+  <body>
+    <div class="header">
+      <p>Welcome {{user.name}}</p>
+      <div class="links">
+        <a href="{% url 'books:add' %}">Add a book and review</a>
+        <a href="{% url 'books:logout' %}">Logout</a>
+      </div>
+    </div>
+    <div id="recent_container">
+      <h3>Recent Book Reviews:</h3>
+      {% if recent %}
+        {% for review in recent %}
+        <div class="reviews">
+          <h4><a href="{% url 'books:book_page' id=review.book_id.id %}">{{review.book_id.title}}</a></h4>
+            <h4 class="rating">Rating: {{review.rating}} Stars</h4>
+            <h4 class="review_content"><a href="{% url 'reg_login:user' id=review.user_id.id %}">{{review.user_id.name}}</a> says: {{review.content}}</h4>
+            <div class="review_bottom_container">
+              <h4 class="date_posted">Posted on: {{review.created_at}}</h4>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div><div class="buffer">
+
+    </div><div id="books_with_reviews_container">
+      <h3>Other Books with Reviews</h3>
+      <div id="books_with_reviews">
+        {% if books %}
+          {% for book in books %}
+            {% if book.reviews.all %}
+              <p class='reviewed_book'><a href="{% url 'books:book_page' id=book.id %}">{{book.title}}</a></p>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

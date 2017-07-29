@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add a Book and Review</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'books/css/add.css' %}">
+  </head>
+  <body>
+    <div class="header">
+      <div class="links">
+        <a href="{% url 'books:index' %}">Home</a>
+        <a href="{% url 'books:logout' %}">Logout</a>
+      </div>
+    </div>
+    <h2>Add a New Book Title and a Review</h2>
+    <div id="add_form_container">
+      <form id="add_form" action="{% url 'books:process' route='new'%}" method="post">
+        {% csrf_token %}
+        <div class="element">
+          <label>Book Title:</label>
+          <input type="text" name="title" value="">
+        </div>
+        <h4>Author</h3>
+          <div id="element_container">
+            <div class="element">
+              <label>Choose from the list:</label>
+              <select name="author">
+                <option value=""></option>
+                {% if authors %}
+                  {% for author in authors %}
+                    <option value="{{author.name}}">{{author.name}}</option>
+                  {% endfor %}
+                {% endif %}
+              </select>
+            </div>
+            <div class="element">
+              <label>Or add a new author</label>
+              <input type="text" name="author_name" value="">
+            </div>
+          </div>
+          <div class="element">
+            <label>Review</label>
+            <textarea name="review" rows="8" cols="80"></textarea>
+          </div>
+          <div class="element">
+            <label>Rating</label>
+            <select id="rating_select" name="rating">
+              <option value="5">5</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+            </select>
+            <label>Stars</label>
+          </div>
+          <input type="submit" id="add_submit" value="Add Book and Review">
+      </form>
+    </div>
+  </body>
+</html>

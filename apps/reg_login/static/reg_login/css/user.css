@@ -1,0 +1,20 @@
+body{
+  margin: 0 auto;
+  padding: 0;
+}
+.header{
+  border-bottom: 1px solid black;
+  height: 28px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: right;
+}
+.header a{
+  line-height: 28px;
+  margin: 0 10px;
+}
+.output{
+  margin: 48px 10px 10px 10px;
+}

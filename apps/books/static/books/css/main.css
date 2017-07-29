@@ -1,0 +1,51 @@
+body{
+  margin: 10px;
+}
+.header{
+  border-bottom: 1px solid black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: right;
+  background-color: white;
+}
+.header p{
+  margin: 0;
+  display: inline-block;
+  text-align: left;
+  width: 78%;
+}
+.header a{
+  line-height: 28px;
+  margin: 0 10px;
+}
+.links{
+  display: inline-block;
+  width: 20%;
+}
+#recent_container, #books_with_reviews_container{
+  display: inline-block;
+  margin-top: 48px;
+  width: 44%;
+  vertical-align: top;
+}
+.reviews{
+  border-bottom: 1px solid black;
+}
+h3 {
+  border-bottom: 1px solid black;
+}
+#books_with_reviews{
+  border: 1px solid black;
+  height: 400px;
+  width: 50%;
+  overflow: scroll;
+}
+.buffer{
+  display: inline-block;
+  width: 6%;
+}
+.reviewed_book{
+  margin-left: 10px;
+}
